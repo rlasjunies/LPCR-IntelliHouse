@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<#language#>" lang="<#language#>">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta http-equiv="Content-Style-Type" content="text/css; charset=ISO-8859-1" />
+<title>Alarm Information</title>
+<meta name="Description" content="Digital,Electronics,Pro-face,GP3000SERESE,HMI" />
+<meta http-equiv="Keywords" content="Digital,Electronics,Pro-face,GP3000SERESE,HMI" />
+<link rel="stylesheet" href="/AGP/css/<#language#>/style.css?ver=2.0" type="text/css" />
+<link rel="alternate"  href="/AGP/alarm.rdf" type="application/rss+xml" title="RSS" /></head> <!-- M.Nakamae //-->
+</head>
+
+<body>
+<!-- start main ***Contents start here*************************************************************-->
+<!-- Minimum width when window is resized -->
+<div class="container">
+  <div class="minwidth">
+    <div class="box">
+      <!-- end min-width -->
+      
+      <div id="main"><!-- For contents layout (common settings) -->
+	<!-- Contents Title -->
+	<h1><img src="/AGP/images/<#language#>/h1_ico.jpg" alt="Contents Title" border="0" />&nbsp;Alarm List</h1>
+	
+	  <div id="alarm"><!-- start select-table -->
+	    <div class="select-table"><!-- start alarm-tdl -->
+	      <form action="" method="post">
+		<p class="submit">
+		  <input type="submit" src="/AGP/images/<#language#>/alink_btn.jpg" value="Refresh" title="Refresh" Name="btnRefresh" />
+		</p>
+		<table class="table2">
+		  <tr>
+		    <th>Block Number</th>
+		    <td>
+		      <select name="block" class="s">
+			<option value="1" <#selected_block_1#>>Block 1</option>
+			<option value="2" <#selected_block_2#>>Block 2</option>
+			<option value="3" <#selected_block_3#>>Block 3</option>
+			<option value="4" <#selected_block_4#>>Block 4</option>
+			<option value="5" <#selected_block_5#>>Block 5</option>
+			<option value="6" <#selected_block_6#>>Block 6</option>
+			<option value="7" <#selected_block_7#>>Block 7</option>
+			<option value="8" <#selected_block_8#>>Block 8</option>
+		      </select>
+		    </td>
+		    <th>Save Format</th>
+		    <td>
+		      <select name="history" class="s">
+			<option value="2" <#selected_history#>>History</option>
+			<option value="1" <#selected_log#>>Log</option>
+			<option value="4" <#selected_active#>>Active</option>
+		      </select>
+		    </td>
+		  </tr>
+		</table>
+	      </div><!-- end alarm-tdl -->
+	    </form>
+	  </div><!-- end alarm ******* -->
+	  
+	  <div id="alarm-detail"><!-- start alarm-detail ****(Drawing a table)**** -->
+
+	    <!-- Alarm Information List*******(start here)**********************************-->
+	    <table class="table3">
+	      <thead>
+		<td colspan="<#ColSpan#>">
+		  <!-- pagelink Settings -->
+		  <div class="pagelink"><!-- start pagelink-->
+		    <a href="<#LinkTop1#>" title="Home">Home</a>
+		    <a href="<#LinkPrev1#>" title="Back">&lt;&lt;Back</a>
+		    <a href="<#LinkNext1#>" title="Next">Next&gt;&gt;</a>
+		    <a href="<#LinkLast1#>" title="End">End</a>
+		  </div><!-- end pagelink -->
+
+		</td>
+		<td>
+		  Counts:<#Kensu#>
+		</td>
+		<td>
+		  Page:<#Page#>/<#AllPage#>
+		</td>
+	      </thead>
+	      <tbody>
+		<tr>
+		  <th>Date</th>
+		  <th>Trigger</th>
+		  <th>Messeage</th>
+		  <th>Acknowledge</th>
+		  <th>Recovery</th>
+		  <##$address_count$
+		  <th><#address_title#></th>
+		  ##>
+		</tr>
+		<tr>
+		  <td><#date_1#></td>
+		  <td><#report_1#></td>	
+		  <td class="left"><pre><#message_1#></pre></td>
+		  <td><#confirmation_1#></td>
+		  <td><#restore_1#></td>
+		  <##$address_count$
+		  <td><#address_1_#></td>
+		  ##>
+		</tr>
+		<tr class="aa">
+		  <td><#date_2#></td>
+		  <td><#report_2#></td>	
+		  <td class="left"><pre><#message_2#></pre></td>
+		  <td><#confirmation_2#></td>
+		  <td><#restore_2#></td>
+		  <##$address_count$
+		  <td><#address_2_#></td>
+		  ##>
+		</tr>
+		<tr>
+		  <td><#date_3#></td>
+		  <td><#report_3#></td>	
+		  <td  class="left"><pre><#message_3#></pre></td>
+		  <td><#confirmation_3#></td>
+		  <td><#restore_3#></td>
+		  <##$address_count$
+		  <td><#address_3_#></td>
+		  ##>
+		</tr>
+		<tr class="aa">
+		  <td><#date_4#></td>
+		  <td><#report_4#></td>	
+		  <td class="left"><pre><#message_4#></pre></td>
+		  <td><#confirmation_4#></td>
+		  <td><#restore_4#></td>
+		  <##$address_count$
+		  <td><#address_4_#></td>
+		  ##>
+		</tr>
+		<tr>
+		  <td><#date_5#></td>
+		  <td><#report_5#></td>	
+		  <td class="left"><pre><#message_5#></pre></td>
+		  <td><#confirmation_5#></td>
+		  <td><#restore_5#></td>
+		  <##$address_count$
+		  <td><#address_5_#></td>
+		  ##>
+		</tr>
+		<tr class="aa">
+		  <td><#date_6#></td>
+		  <td><#report_6#></td>	
+		  <td class="left"><pre><#message_6#></pre></td>
+		  <td><#confirmation_6#></td>
+		  <td><#restore_6#></td>
+		  <##$address_count$
+		  <td><#address_6_#></td>
+		  ##>
+		</tr>
+		<tr>
+		  <td><#date_7#></td>
+		  <td><#report_7#></td>	
+		  <td class="left"><pre><#message_7#></pre></td>
+		  <td><#confirmation_7#></td>
+		  <td><#restore_7#></td>
+		  <##$address_count$
+		  <td><#address_7_#></td>
+		  ##>
+		</tr>
+		<tr class="aa">
+		  <td><#date_8#></td>
+		  <td><#report_8#></td>	
+		  <td class="left"><pre><#message_8#></pre></td>
+		  <td><#confirmation_8#></td>
+		  <td><#restore_8#></td>
+		  <##$address_count$
+		  <td><#address_8_#></td>
+		  ##>
+		</tr>
+		<tr>
+		  <td><#date_9#></td>
+		  <td><#report_9#></td>	
+		  <td class="left"><pre><#message_9#></pre></td>
+		  <td><#confirmation_9#></td>
+		  <td><#restore_9#></td>
+		  <##$address_count$
+		  <td><#address_9_#></td>
+		  ##>
+		</tr>
+		<tr class="aa">
+		  <td><#date_10#></td>
+		  <td><#report_10#></td>
+		  <td class="left"><pre><#message_10#></pre></td>
+		  <td><#confirmation_10#></td>
+		  <td><#restore_10#></td>
+		  <##$address_count$
+		  <td><#address_10_#></td>
+		  ##>
+		</tr>
+		<tr>
+		  <td><#date_11#></td>
+		  <td><#report_11#></td>
+		  <td class="left"><pre><#message_11#></pre></td>
+		  <td><#confirmation_11#></td>
+		  <td><#restore_11#></td>
+		  <##$address_count$
+		  <td><#address_11_#></td>
+		  ##>
+		</tr>
+		<tr class="aa">
+		  <td><#date_12#></td>
+		  <td><#report_12#></td>
+		  <td class="left"><pre><#message_12#></pre></td>
+		  <td><#confirmation_12#></td>
+		  <td><#restore_12#></td>
+		  <##$address_count$
+		  <td><#address_12_#></td>
+		  ##>
+		</tr>
+		<tr>
+		  <td><#date_13#></td>
+		  <td><#report_13#></td>
+		  <td class="left"><pre><#message_13#></pre></td>
+		  <td><#confirmation_13#></td>
+		  <td><#restore_13#></td>
+		  <##$address_count$
+		  <td><#address_13_#></td>
+		  ##>
+		</tr>
+		<tr class="aa">
+		  <td><#date_14#></td>
+		  <td><#report_14#></td>
+		  <td class="left"><pre><#message_14#></pre></td>
+		  <td><#confirmation_14#></td>
+		  <td><#restore_14#></td>
+		  <##$address_count$
+		  <td><#address_14_#></td>
+		  ##>
+		</tr>
+		<tr>
+		  <td><#date_15#></td>
+		  <td><#report_15#></td>
+		  <td class="left"><pre><#message_15#></pre></td>
+		  <td><#confirmation_15#></td>
+		  <td><#restore_15#></td>
+		  <##$address_count$
+		  <td><#address_15_#></td>
+		  ##>
+		</tr>
+
+	      </tbody>
+	      <tfoot>
+		<tr>
+		  <td colspan="<#ColSpan#>">
+		  <!-- pagelink Settings -->
+		  <div class="pagelink"><!-- start pagelink-->
+		    <a href="<#LinkTop1#>" title="Home">Home</a>
+		    <a href="<#LinkPrev1#>" title="Back">&lt;&lt;Back</a>
+		    <a href="<#LinkNext1#>" title="Next">Next&gt;&gt;</a>
+		    <a href="<#LinkLast1#>" title="End">End</a>
+		  </div><!-- end pagelink -->
+		  </td>
+		  <td>
+		    Counts:<#Kensu#>
+		  </td>
+		  <td>
+		    Page:<#Page#>/<#AllPage#>
+		  </td>
+		</tr>
+	      </tfoot>
+	    </table>
+	    <!-- Alarm Information List *******(end here)*******************************-->
+	    
+	  </div><!-- end alarm-detail ***** -->
+          <!-- RSS Registeration -->
+	  <div id="rss"><!-- start-rss -->
+	    
+	    <div class="rss-title"><h2>RSS</h2></div>
+	    
+	    <div class="rss-edit">
+	      <p>You can save Alarm information to RSS Reader.</p>
+		<input type="text" value="http://<#HTTP_HOST#><#PATH_INFO#><#RssFeed#>" class="xl" id="url-txt" />
+		<a href="<#PATH_INFO#><#RssFeed#>" title="See RSS Field">
+		  <img src="/AGP/images/<#language#>/rss-ico.jpg" alt="Save to RSS Reader" border="0" />
+		</a>
+	    </div><!-- end rss-edit -->
+	  </div><!-- end rss -->
+      </div><!-- * end main *************(End of Content******************************************************-->
+
+      <!-- Close Tag group -->
+    </div><!-- end container -->
+  </div><!-- end minwidth -->
+</div><!-- end box -->
+<!-- end min-width Close Tag group -->
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<#language#>" lang="<#language#>">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta http-equiv="Content-Style-Type" content="text/css; charset=ISO-8859-1" />
+<title>Viewer</title>
+<meta name="Description" content="Digital,Electronics,Pro-face,GP3000SERESE,HMI" />
+<meta http-equiv="Keywords" content="Digital,Electronics,Pro-face,GP3000SERESE,HMI" />
+<link rel="stylesheet" href="/AGP/css/<#language#>/style.css" type="text/css" />
+</head>
+
+<body>
+  <!-- Minimum width when window is resized -->
+  <div class="container">
+    <div class="minwidth">
+      <div class="box">
+    <!-- end min-width -->
+
+<!-- start main *** Contents start here *************************************************************-->
+    <div id="main"><!-- For Contents layout (common settings) -->
+      <!-- Contents Title -->
+      <h1><img src="/AGP/images/<#language#>/h1_ico.jpg" alt="Contents Title" border="0" />&nbsp;Viewer</h1>
+      <div id="viewer"><!-- start viewer-->
+        <div id="l-head">&nbsp;</div>
+        <div id="l-body">
+
+          <!-- *GP-Viewer EX *****************************start here************************-->
+          <p class="explanation"><!-- start gp-caption -->
+        By using the GP-Viewer EX feature, you can display the same screen on your PC as the machine.
+          </p>
+      <div class="dlimg"><!-- start dlimg -->
+            <OBJECT ID="ViewerCtl" CLASSID="CLSID:0E66E7C9-45CC-4EDC-B7DD-47B016AD7E01" codebase="/AGP/ViewerStarter.dll" width=306 height=144 VIEWASTEXT>
+              <PARAM NAME="ServerIP" VALUE="<#HTTP_HOST_NON_PORT#>" />
+              <PARAM NAME="UserID" VALUE="<#user_name#>" />
+              <PARAM NAME="ImageFile" VALUE="http://<#HTTP_HOST#>/AGP/images/<#language#>/start-up_btn.jpg" />
+              <PARAM NAME="Digest" VALUE="<#viewer_digest#>" />
+              <PARAM NAME="ClientRandomString" VALUE="<#viewer_cnonce#>" />
+              <PARAM NAME="Language" VALUE="<#language#>" />
+            </OBJECT>
+      </div><!-- end dlimg -->
+
+          <!-- *Download GP-Viewer EX *********************start here************************-->
+          <div class="dlnavi"><!-- start dlnavi  -->
+        <p class="explanation">
+      Installing the GP-Viewer application enables you to use the Viewer feature even without a browser.<br />
+      <span class="error">Click "Download" (below) to begin download.</span>
+        </p>
+        <p class="dl-btn"><a href="http://www.pro-face.com/jump/soft/proex/viewer.htm" title="Start downloading" target="_blank">Download GP-Viewer EX application</a></p>
+          </div><!-- end dlnavi -->
+        </div><!-- end l-body -->
+        <div id="l-foot">&nbsp;</div>
+        
+      </div><!-- end viewer-->
+    </div>
+<!-- * end main *************(End of Contents)******************************************************-->
+
+    <!-- min-width Close Tag group -->
+      </div><!-- end container -->
+    </div><!-- end minwidth -->
+  </div><!-- end box -->
+  <!-- end min-width Close Tag group -->
+</body>
+</html>

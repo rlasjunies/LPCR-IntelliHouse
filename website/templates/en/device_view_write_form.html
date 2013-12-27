@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<#language#>" lang="<#language#>">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta http-equiv="Content-Script-Type" content="text/javascript; charset=ISO-8859-1" />
+<meta http-equiv="Content-Style-Type" content="text/css; charset=ISO-8859-1" />
+<title>Write to Device View</title>
+<meta name="Description" content="Digital,Electronics,Pro-face,GP3000SERESE,HMI" />
+<meta http-equiv="Keywords" content="Digital,Electronics,Pro-face,GP3000SERESE,HMI" />
+<link rel="stylesheet" href="/AGP/css/<#language#>/style.css" type="text/css" />
+<script type="text/javascript" src="/AGP/js/<#language#>/agp.js"></script>
+<script language="JavaScript" type="text/JavaScript">
+// <![CDATA[
+    function submitDeviceView() {
+        document.device_view_write.machine_name.value = encodeAGP(document.device_view_write.machine_name.value);
+        document.device_view_write.address.value = encodeAGP(document.device_view_write.address.value);
+        document.device_view_write.type.value = encodeAGP(document.device_view_write.type.value);
+        document.device_view_write.data.value = encodeAGP(document.device_view_write.data.value);
+        
+        return true;
+    }
+// ]]>
+</script>
+</head>
+<body onLoad="document.device_view_write.data.focus()">
+
+<!-- Write to Device View Form *************************************************************************************** -->
+<div id="device-write"><!-- start device-write -->
+
+  <h1><img src="/AGP/images/<#language#>/h1_d_ico.jpg" alt="Contents Title" border="0" />&nbsp;Device View(write)</h1>
+  <p class="error"><#manager_message#><#warn_code#><#manager_return_code#></p>
+      <div class="device-r-top">&nbsp;</div><!-- (Rouded top) -->
+      <div class="device-r-body">
+    <form action="/goform/Controller?req=device_view_write&lang=<#language#>" name="device_view_write" method="POST" onsubmit="return submitDeviceView()">
+      <input type="hidden" name="machine_name" value="<#machine_name#>" />
+       <input type="hidden" name="address" value="<#address#>" />
+       <input type="hidden" name="type" value="<#type#>" />
+   <table class="dm-table">
+     <tr>
+       <th>Device address</th>
+       <td><#address#></td>
+     </tr>
+     <tr>
+       <th>Value</th>
+       <td><input type="text" name="data" class="xl" maxlength="256" value="<#data#>"/></td>
+     </tr>
+    </table>
+    <p class="submit">
+      <input type="submit" value="Write" title="Write" />
+    </p>
+  </form>
+</div><!-- end device-r-body -->
+<div class="device-r-bottom">&nbsp;</div><!-- (Rounded bottom) -->
+</div><!-- end device-write -->
+</body>
+</html>

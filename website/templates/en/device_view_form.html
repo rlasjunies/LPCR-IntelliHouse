@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<#language#>" lang="<#language#>">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta http-equiv="Content-Style-Type" content="text/css; charset=ISO-8859-1" />
+<meta http-equiv="Content-Script-Type" content="text/<#language#>vascript; charset=ISO-8859-1" />
+<title>Device View</title>
+<meta name="Description" content="Digital,Electronics,Pro-face,GP3000SERESE,HMI" />
+<meta http-equiv="Keywords" content="Digital,Electronics,Pro-face,GP3000SERESE,HMI" />
+<link rel="stylesheet" href="/AGP/css/<#language#>/style.css" type="text/css" />
+<script type="text/javascript" src="/AGP/js/<#language#>/agp.js"></script>
+<script language="JavaScript">
+// <![CDATA[
+function startMonitor()
+{
+    var url = "/goform/Controller?req=device_view_monitor&lang=<#language#>";
+    url += "&machine_name=" + document.device_view_form.machine_name.value;
+    url += "&point="  + document.device_view_form.point.value;
+    url += "&update=" + document.device_view_form.update.value;
+    url += "&address="+ document.device_view_form.address.value;
+    url += "&type="   + document.device_view_form.type.value;
+    url = encodeAGP(url);
+    parent.monitor.location.href = url;
+}
+// ]]>
+</script>
+</head>
+<body>
+<!-- start main ****Contents start here ***********************************************************-->
+<!-- Minimum width when window is resized -->
+<div class="container">
+  <div class="minwidth">
+    <div class="box">
+      <!-- end min-width -->
+      
+      <div id="main"><!-- For Contents layout (common settings) -->
+    
+    <h1><img src="/AGP/images/<#language#>/h1_ico.jpg" alt="Contents Title" border="0" />&nbsp;Device View</h1>
+    
+    <div id="device-view"><!-- start device-view -->
+      
+      <!-- Drawing Device View selection box -->
+      <div class="select-table"><!-- start select-table -->
+        <form name="device_view_form" onsubmit="return false;">
+          <table class="table2">
+        <tr>
+          <th>Device name</th>
+          <td>
+            <select name="machine_name" class="l">
+              <option value="#INTERNAL" selected>#INTERNAL</option>
+              <##$machine_count$
+              <option value="<#machine_name#>"><#machine_name#></option>
+              ##>
+              </select>
+            </td>
+            <th>Device Address</th>
+          <td><input type="text" name="address" value="<#address#>" /></td>
+          </tr>
+        <tr>
+          <th>Access points</th>
+          <td>
+            <select name="point" class="ss">
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="4">4</option>
+              <option value="8">8</option>
+              <option value="16">16</option>
+              <option value="32">32</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+              <option value="200">200</option>
+            </select>
+          </td>
+          <th>Data Type</th>
+          <td>
+            <select name="type">
+              <option value="bit">Bit</option>
+              <option value="16bit_signed"   selected>16 bit signed</option>
+              <option value="16bit_unsigned">16 bit unsigned</option>
+              <option value="16bit_hex">16 bit hexadecimal</option>
+              <option value="32bit_signed">32 bit signed</option>
+              <option value="32bit_unsigned">32 bit unsigned</option>
+              <option value="32bit_hex">32 bit hexadecimal</option>
+              <option value="float">Single Precision Floating Point</option>
+              <option value="double">Double Precision Floating Point</option>
+              <option value="string">Text</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>Update cycle</th>
+          <td>
+            <select name="update" class="ss">
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="60">60</option>
+              <option value="120">120</option>
+              <option value="180">180</option>
+              <option value="300">300</option>
+            </select>&nbsp;&nbsp;Seconds
+          </td>
+          <td colspan="2"></td>
+        </tr>
+        </table>
+<!--
+          <input type="image" src="/AGP/images/<#language#>/start_btn.jpg" onclick="startMonitor();" value="Start Monitoring" />
+-->
+        <p class="mo-start">
+          <input type="button" onclick="startMonitor();" title="Start Monitoring" value="Start Monitoring" />
+        </p>
+       </form>
+      </div><!-- end select-table -->
+    </div><!-- end device-view -->
+  </div><!-- end main -->
+
+    <!-- min-width Close Tag group -->
+      </div><!-- end container -->
+    </div><!-- end minwidth -->
+  </div><!-- end box -->
+  <!-- end min-width Close Tag group -->
+  
+</body>
+</html>
+

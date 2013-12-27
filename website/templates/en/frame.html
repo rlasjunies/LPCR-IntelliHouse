@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<#language#>" lang="<#language#>">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta http-equiv="Content-Style-Type" content="text/css; charset=ISO-8859-1" />
+<meta http-equiv="Content-Script-Type" content="text/javascript; charset=ISO-8859-1" />
+<title>Remote Maintenance-RL</title>
+<meta name="Description" content="Digital,Electronics,Pro-face,GP3000SERESE,HMI" />
+<meta http-equiv="Keywords" content="Digital,Electronics,Pro-face,GP3000SERESE,HMI" />
+<link rel="stylesheet" href="/AGP/css/<#language#>/style.css" type="text/css" />
+</head>
+<script language="JavaScript">
+// <![CDATA[
+function error(errorCode, errorMessage)
+{
+    //alert(errorCode);
+    //alert(errorMessage);
+/*
+    document.frame.header.src = "";
+    document.frame.main.src = "";
+    document.frame.footer = "";
+*/  
+    var message;
+    message = "<html><head><title>Unexpected error</title></head><body>\n";
+    message +="An unexpected error has occurred.<br>\n";
+    message += "Error code:" + errorCode + "<br>\n";
+    message += "Error message:" + errorMessage + "<br>\n";
+    message += "</body></html>\n";
+    
+    header.document.write(" ");
+    main.document.write(message);
+    footer.document.write(" ");
+    
+}
+// ]]>
+</script>
+
+<!-- frame settings -->
+<frameset rows="120px,*,28px" border="0" frameborder="0">
+  <frame name="header" src="/goform/Controller?req=header&lang=<#language#>" scrolling="no" noresize="noresize" />
+  <frame name="main" src="/goform/Controller?req=welcome&lang=<#language#>" scrolling="auto" />
+  <frame name="footer" src="/goform/Controller?req=footer&lang=<#language#>" scrolling="no" noresize="noresize" />
+
+<!--   <frame name="header" src="header.html" scrolling="no" noresize="noresize" /> -->
+<!--   <frame name="main" src="welcome.html" scrolling="auto" /> -->
+<!--   <frame name="footer" src="footer.html" scrolling="no" noresize="noresize" /> -->
+</frameset>
+
+</html>

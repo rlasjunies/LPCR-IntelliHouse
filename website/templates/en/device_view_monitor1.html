@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<#language#>" lang="<#language#>">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta http-equiv="Content-Script-Type" content="text/javascript; charset=ISO-8859-1" />
+<meta http-equiv="Content-Style-Type" content="text/css; charset=ISO-8859-1" />
+<title>Access points:1</title>
+<meta name="Description" content="Digital,Electronics,Pro-face,GP3000SERESE,HMI" />
+<meta http-equiv="refresh" content="<#update#>" />
+<meta http-equiv="Keywords" content="Digital,Electronics,Pro-face,GP3000SERESE,HMI" />
+<link rel="stylesheet" href="/AGP/css/<#language#>/style.css" type="text/css" />
+<script type="text/javascript" src="/AGP/js/<#language#>/agp.js"></script>
+<script language="JavaScript" type="text/JavaScript">
+// <![CDATA[
+    function openWindow(address) {
+        <###$write_window_link$openDeviceViewWrite('<#language#>', '<#machine_name#>', address, '<#type#>');###>
+    }
+// ]]>
+</script>
+<style type="text/css"> 
+<!-- 
+a:link, a:visited, a:hover, a:active { color: black; } 
+.device-monitor-value { cursor: default; } 
+<###$write_window_link$
+a:link {color:#134685; text-decoration:none;}
+a:visited {color:#134685; text-decoration:none;}
+a:hover , a:active {color:#ff0000; text-decoration:none;}
+.device-monitor-value { cursor: pointer; } 
+###>
+-->
+</style>
+</head>
+<body>
+  <!-- Minimun width when window is resized -->
+  <div class="container">
+    <div class="minwidth">
+      <div class="box">
+	<!-- end min-width -->
+
+	<!-- Access points:1 -->
+	<div id="main"><!-- start main -->
+	  <div id="device-monitor"><!-- start device-monitor -->
+            <table class="dm_tdl">
+              <tr>
+		<td></td>
+		<th class="th-a">+0</th>
+              </tr>
+              <tr>
+		<th><#address_1#></th>
+		  <td class="<#css_class#>"><a class="device-monitor-value" href="#" onclick="openWindow('<#address_1#>')"><#data_1#></a></td>
+		</tr>
+
+
+	      </div><!-- end device-monitor -->
+	    </div><!-- end main -->
+
+	    <!-- min-width Close Tag group -->
+	  </div><!-- end container -->
+	</div><!-- end minwidth -->
+      </div><!-- end box -->
+      <!-- end min-width Close Tag gropu -->
+      
+    </body>
+  </html>
+    

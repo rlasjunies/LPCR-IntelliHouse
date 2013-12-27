@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<#language#>" lang="<#language#>">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta http-equiv="Content-Style-Type" content="text/css; charset=ISO-8859-1" />
+<meta http-equiv="Content-Script-Type" content="text/javascript; charset=ISO-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Access points:16</title>
+<meta name="Description" content="Digital,Electronics,Pro-face,GP3000SERESE,HMI" />
+<meta http-equiv="refresh" content="<#update#>" />
+<meta http-equiv="Keywords" content="Digital,Electronics,Pro-face,GP3000SERESE,HMI" />
+<link rel="stylesheet" href="/AGP/css/<#language#>/style.css" type="text/css" />
+<script type="text/javascript" src="/AGP/js/<#language#>/agp.js"></script>
+<script language="JavaScript" type="text/JavaScript">
+// <![CDATA[
+    function openWindow(address) {
+        <###$write_window_link$openDeviceViewWrite('<#language#>', '<#machine_name#>', address, '<#type#>');###>
+    }
+// ]]>
+</script>
+<style type="text/css"> 
+<!-- 
+a:link, a:visited, a:hover, a:active { color: black; } 
+.device-monitor-value { cursor: default; } 
+<###$write_window_link$
+a:link {color:#134685; text-decoration:none;}
+a:visited {color:#134685; text-decoration:none;}
+a:hover , a:active {color:#ff0000; text-decoration:none;}
+.device-monitor-value { cursor: pointer; } 
+###>
+-->
+</style>
+</head>
+<body>
+
+  <!-- Minimum width when window is resized -->
+  <div class="container">
+    <div class="minwidth">
+      <div class="box">
+	<!-- end min-width -->
+
+	<!-- Access points:16 -->
+	<div id="main"><!-- start main -->
+	  <div id="device-monitor"><!-- start device-monitor -->
+
+            <table class="dm_tdl">
+			<tr>
+			<td></td>
+			<th class="th-a">+0</th>
+			<th class="th-a">+1</th>
+			<th class="th-a">+2</th>
+			<th class="th-a">+3</th>
+			</tr>
+			<tr>
+			<th><#address_1#></th>
+			<td class="<#css_class#>"><a class="device-monitor-value" href="#" onclick="openWindow('<#address_1#>')"><#data_1#></a></td>
+			<td class="<#css_class#>"><a class="device-monitor-value" href="#" onclick="openWindow('<#address_2#>')"><#data_2#></a></td>
+			<td class="<#css_class#>"><a class="device-monitor-value" href="#" onclick="openWindow('<#address_3#>')"><#data_3#></a></td>
+			<td class="<#css_class#>"><a class="device-monitor-value" href="#" onclick="openWindow('<#address_4#>')"><#data_4#></a></td>
+			</tr>
+			<tr>
+			<th><#address_5#></th>
+			<td class="<#css_class#>"><a class="device-monitor-value" href="#" onclick="openWindow('<#address_5#>')"><#data_5#></a></td>
+			<td class="<#css_class#>"><a class="device-monitor-value" href="#" onclick="openWindow('<#address_6#>')"><#data_6#></a></td>
+			<td class="<#css_class#>"><a class="device-monitor-value" href="#" onclick="openWindow('<#address_7#>')"><#data_7#></a></td>
+			<td class="<#css_class#>"><a class="device-monitor-value" href="#" onclick="openWindow('<#address_8#>')"><#data_8#></a></td>
+			</tr>
+			<tr>
+			<th><#address_9#></th>
+			<td class="<#css_class#>"><a class="device-monitor-value" href="#" onclick="openWindow('<#address_9#>')"><#data_9#></a></td>
+			<td class="<#css_class#>"><a class="device-monitor-value" href="#" onclick="openWindow('<#address_10#>')"><#data_10#></a></td>
+			<td class="<#css_class#>"><a class="device-monitor-value" href="#" onclick="openWindow('<#address_11#>')"><#data_11#></a></td>
+			<td class="<#css_class#>"><a class="device-monitor-value" href="#" onclick="openWindow('<#address_12#>')"><#data_12#></a></td>
+			</tr>
+			<tr>
+			<th><#address_13#></th>
+			<td class="<#css_class#>"><a class="device-monitor-value" href="#" onclick="openWindow('<#address_13#>')"><#data_13#></a></td>
+			<td class="<#css_class#>"><a class="device-monitor-value" href="#" onclick="openWindow('<#address_14#>')"><#data_14#></a></td>
+			<td class="<#css_class#>"><a class="device-monitor-value" href="#" onclick="openWindow('<#address_15#>')"><#data_15#></a></td>
+			<td class="<#css_class#>"><a class="device-monitor-value" href="#" onclick="openWindow('<#address_16#>')"><#data_16#></a></td>
+			</tr>
+            </table>
+
+          </div><!-- end device-monitor -->
+        </div><!-- end main -->
+				
+        <!-- min-width Close Tag group -->
+      </div><!-- end container -->
+    </div><!-- end minwidth -->
+  </div><!-- end box -->
+   <!-- end min-width Close Tag group -->
+ </body>
+</html>

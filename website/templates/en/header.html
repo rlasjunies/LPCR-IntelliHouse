@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<#language#>" lang="<#language#>">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta http-equiv="Content-Style-Type" content="text/css; charset=ISO-8859-1" />
+<meta http-equiv="Content-Script-Type" content="text/javascript; charset=ISO-8859-1" />
+<title>Remote Maintenance</title>
+<meta name="Description" content="Digital,Electronics,Pro-face,GP3000SERESE,HMI" />
+<meta http-equiv="Keywords" content="Digital,Electronics,Pro-face,GP3000SERESE,HMI" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+<link rel="stylesheet" href="/AGP/css/<#language#>/style.css" type="text/css" />
+<script type="text/javascript" src="/AGP/js/<#language#>/agp.js"></script>
+</head>
+<body>
+  <!-- Minimum width when window is resized -->
+  <div class="container">
+    <div class="minwidth">
+      <div class="box">
+    <!-- end min-width -->
+
+    <!-- start header (header here)********************************************-->
+    <div id="header">
+
+      <!-- Using h_left, display company logo wrapped in H1 tags -->
+      <div id="h_left"><!-- left layout -->
+        <h1><a href="/goform/Controller?req=welcome&lang=<#language#>" target="main" title="To Top of Page">Pro-face</a></h1>
+<!--        <h1><a href="welcome.html" target="main" title="To Top of Page">Pro-face</a></h1> -->
+      </div><!-- end div h_left -->
+
+      <!-- Using div select hmi animation layout by language -->
+      <div id="h_right"><!-- Heaer -right layout -->
+
+        <!-- Select language menu -->
+        <div id="lang_bg">
+          <div class="lang_kazari">
+          </div><!-- end lang_lazari-->
+
+          <div class="lang_list">
+        <ul class="langmenu">
+          <li><a href="/goform/Controller?req=frame&lang=ja" target="_top" title="To Japanese version"><span>Japanese</span></a></li>
+          <li class="active-page"><a href="/goform/Controller?req=frame&lang=en" target="_top" title="To English version"><span>English</span></a></li>
+        </ul>
+          </div><!-- end div lang_list -->
+
+        </div><!-- end div lang_bg -->
+
+        <!-- Drawing HMI animation -->
+        <div id="hmlmovie">
+          <span class="gifanime">
+        <img src="/AGP/images/<#language#>/HMI4_white1.gif" border="0" alt="HMI animation" />
+        <img src="/AGP/images/<#language#>/HMI4_white2.gif" border="0" alt="HMI animation2" />
+          </span>
+        </div><!-- end div hmlmovie -->
+      </div><!-- end div h_right -->  
+
+    </div><!-- end div header -->
+
+
+    <!-- Display unit title -->
+    <div id="title">
+      <h2>Remote maintenance</h2>
+    </div><!-- end div title-->
+
+    <!-- Menu ************************************************************-->
+    <div id="global"><!-- start global -->
+      <ul class="globalmenu">
+        <li><a href="/goform/Controller?req=device_information&lang=<#language#>" target="main" title="To Equipment Information"><span>Equipment Information</span></a></li>
+        <li><a href="/goform/Controller?req=viewer&lang=<#language#>" target="main" title="To Viewer"><span>Viewer</span></a></li>
+        <li><a href="/goform/Controller?req=device_view_frame&lang=<#language#>" target="main" title=" To Device View"><span>Device View</span></a></li>
+        <li><a href="/goform/Controller?req=alarm_information&lang=<#language#>" target="main" title="To Alarm Information"><span>Alarm Information</span></a></li>
+        <li><a href="ftp://<#HTTP_HOST_NON_PORT#>/" target="_blank" title="To File Transfer"><span>File Transfer</span></a></li>
+        <li><a href="#" onClick="closeConfirm();return false;" target="header" title="To Log-Off"><span>Log-Off</span></a></li>
+      </ul>
+
+    </div><!-- end global -->
+
+    <!-- min-width Close Tag group -->
+      </div><!-- end container -->
+    </div><!-- end minwidth -->
+  </div><!-- end box -->
+  <!-- end min-width Close Tag group -->
+
+</body>
+</html>
