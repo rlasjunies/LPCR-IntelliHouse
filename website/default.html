@@ -1,5 +1,43 @@
+<!DOCTYPE html>
 <html>
-<META HTTP-EQUIV="Refresh" CONTENT="0; URL=/goform/Controller?req=frame&lang=en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>LPCR - Intelli House</title>
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet"  href="libs/jquery.mobile-1.4.0.min.css">
+	<script src="libs/jquery-1.10.2.min.js"></script>
+	<script src="libs/jquery.mobile-1.4.0.min.js"></script>
+</head>
 <body>
+	
+	<div data-role="page" id="page-main" data-theme="a">
+
+		<div data-role="header" data-position="fixed" data-theme="a">
+			<p align="center">LPCR - Intelli House</p>
+			<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-right">Paramètres</a>
+		</div>
+		
+		<div data-role="content" data-theme="a">
+			<ul data-role="listview" data-inset="true">
+				<li><a href="#"><img src="libs/gear-black.png" alt="Lumières" class="ui-li-1icon ui-corner-none">Lumières</a></li>
+				<li><a href="#"><img src="libs/gear-black.png" alt="Volets roulants" class="ui-li-icon">Volets roulants</a></li>
+			</ul>
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<p>Copyright(c)</p>
+		</div>		
+	</div> <!-- id="page-main" -->
+
+	
+	<div class="ui-field-contain">
+		<label for="flip2">Flip switch:</label>
+		<select name="flip2" id="flip2" data-role="flipswitch">
+			<option value="off">Off</option>
+			<option value="on">On</option>
+		</select>
+	</div>			
 </body>
-</html>
