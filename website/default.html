@@ -1,43 +1,94 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>LPCR - Intelli House</title>
-	<link rel="shortcut icon" href="favicon.ico">
-	<link rel="stylesheet"  href="libs/jquery.mobile-1.4.0.min.css">
-	<script src="libs/jquery-1.10.2.min.js"></script>
+
+	<link rel="shortcut icon" href="img/favicon.ico">
+	
+    <link rel="stylesheet"  href="libs/jquery.mobile-1.4.0.min.css">
+    <link rel="stylesheet"  href="app.css">
+	
+    <script src="libs/jquery-1.10.2.min.js"></script>
 	<script src="libs/jquery.mobile-1.4.0.min.js"></script>
+    
 </head>
 <body>
 	
 	<div data-role="page" id="page-main" data-theme="a">
 
 		<div data-role="header" data-position="fixed" data-theme="a">
-			<p align="center">LPCR - Intelli House</p>
-			<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-right">Param�tres</a>
+			<p style="align-content:center">LPCR - Intelli House</p>
+			<a href="#page-setup" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-right">Paramètres</a>
 		</div>
 		
 		<div data-role="content" data-theme="a">
 			<ul data-role="listview" data-inset="true">
-				<li><a href="#"><img src="libs/gear-black.png" alt="Lumi�res" class="ui-li-1icon ui-corner-none">Lumi�res</a></li>
-				<li><a href="#"><img src="libs/gear-black.png" alt="Volets roulants" class="ui-li-icon">Volets roulants</a></li>
+				<li><a href="#page-lumiere" data-transition="slide" style="vertical-align:middle"><img src="img/light.75x75.png" alt="Lumieres"/><p>Lumieres</p></a></li>
+				<li><a href="#page-lumiere" data-transition="slide" style="vertical-align:middle"><img src="img/rollingshutter.75x75.png" alt="Volets roulants"/><p>Volets roulants</p></a></li>
 			</ul>
 		</div>
 
-		<div data-role="footer" data-position="fixed">
-			<p>Copyright(c)</p>
-		</div>		
-	</div> <!-- id="page-main" -->
+	</div> 
 
-	
-	<div class="ui-field-contain">
-		<label for="flip2">Flip switch:</label>
-		<select name="flip2" id="flip2" data-role="flipswitch">
-			<option value="off">Off</option>
-			<option value="on">On</option>
-		</select>
-	</div>			
+    <div data-role="page" id="page-setup" data-theme="a">
+
+		<div data-role="header" data-position="fixed" data-theme="a">
+			<p style="align-content:center">LPCR - Intelli House</p>
+			<a href="#page-setup" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-right">Paramètres</a>
+		</div>
+		
+		<div data-role="content" data-theme="a">
+			<ul data-role="listview" data-inset="true">
+				<li><a href="#page-write-form" data-transition="slide" style="vertical-align:middle"><img src="libs/images/icons-svg/edit-black.svg" alt="Edit"/><p>Ecrire / Lire une E/S</p></a></li>
+			</ul>
+		</div>
+
+	</div> 
+
+    <div data-role="page" id="page-lumiere" data-theme="a">
+
+		<div data-role="header" data-position="fixed" data-theme="a">
+			<p style="align-content:center">LPCR - Intelli House</p>
+			<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-right">Paramètres</a>
+		</div>		
+		<div data-role="content" data-theme="a">
+	        <div class="ui-field-contain">
+		        <label for="light1">Jardinière:</label>
+		        <select name="light1" id="light1" data-role="flipswitch">
+			        <option value="off">Off</option>
+			        <option value="on">On</option>
+		        </select>
+	        </div>
+	        <div class="ui-field-contain">
+		        <label for="light2">Porche voiture:</label>
+		        <select name="light2" id="light2" data-role="flipswitch">
+			        <option value="off">Off</option>
+			        <option value="on">On</option>
+		        </select>
+	        </div>			
+		</div>
+	</div> 
+
+    <div data-role="page" id="page-write-form" data-theme="a">
+		    <div data-role="header" data-position="fixed" data-theme="a">
+			    <p style="align-content:center">LPCR - Intelli House</p>
+			    <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-right">Paramètres</a>
+		    </div>                        
+
+		    <div data-role="content" data-theme="a">
+            <!--<input type="hidden" name="machine_name" value="#INTERNAL" />
+                    <input type="hidden" name="type" value="bit" />-->
+                    <input type="text" id="address" class="ui-btn-inline" value="USR0000002" /> <a href="#" class="ui-btn ui-btn-inline" onclick="autoGet($('#address').val());">Get</a>
+                    <input type="text" id="data" class="ui-btn-inline" maxlength="256" value="1"/> <a href="#" class="ui-btn ui-btn-inline" onclick="autoPost($('#address').val(), $('#data').val());">Post</a>				
+                <div id="result"></div>
+            </div>
+		    <div data-role="footer" data-position="fixed">
+			    <p id="P1"></p>
+		    </div>		
+	    </div>	
+
+    <script src="app.js"></script>
 </body>

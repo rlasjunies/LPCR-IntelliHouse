@@ -22,8 +22,6 @@
     <Content Include="img\favicon.ico" />
     <Content Include="img\light.75x75.png" />
     <Content Include="img\rollingshutter.75x75.png" />
-    <Content Include="libs\d.ts\jquery.d.ts" />
-    <Content Include="libs\d.ts\jquerymobile.d.ts" />
     <Content Include="libs\images\ajax-loader.gif" />
     <Content Include="libs\images\icons-png\action-black.png" />
     <Content Include="libs\images\icons-png\action-white.png" />
@@ -235,6 +233,8 @@
     <Content Include="libs\jquery.mobile.inline-svg-1.4.0.min.css" />
     <Content Include="libs\jquery.mobile.structure-1.4.0.min.css" />
     <Content Include="libs\jquery.mobile.theme-1.4.0.min.css" />
+    <Content Include="Scripts\typings\jquerymobile\jquerymobile.d.ts" />
+    <Content Include="Scripts\typings\jquery\jquery.d.ts" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -242,6 +242,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="libs\jquery.mobile-1.4.0.min.map" />
+    <Content Include="packages.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

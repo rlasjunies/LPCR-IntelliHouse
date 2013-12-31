@@ -1,33 +1,5 @@
-/// <reference path="libs/d.ts/jquerymobile.d.ts" />
-/// <reference path="libs/d.ts/jquery.d.ts" />
-
-class Timer {
-    element: HTMLElement;
-    span: HTMLElement;
-    timerToken: number;
-
-    constructor(element: HTMLElement) {
-        this.element = element;
-        this.element.innerHTML += "The time is: ";
-        this.span = document.createElement('span');
-        this.element.appendChild(this.span);
-        this.span.innerText = new Date().toUTCString();
-    }
-
-    start() {
-        this.timerToken = setInterval(() => this.span.innerHTML = new Date().toUTCString(), 500);
-    }
-
-    stop() {
-        clearTimeout(this.timerToken);
-    }
-}
-
-window.onload = () => {
-    //var el = document.getElementById('timer1');
-    //var t = new Timer(el);
-    //t.start();
-};
+/// <reference path="Scripts/typings/jquerymobile/jquerymobile.d.ts" />
+/// <reference path="Scripts/typings/jquery/jquery.d.ts" />
 
 class Automate {
     machine: string = "<35>INTERNAL"; //#INTERNAL
@@ -55,14 +27,6 @@ class Automate {
         //console.log( "automate.post - end" );
     }
                       
-    //var url = "/goform/Controller?req=device_view_monitor&lang=<#language#>";
-    //url += "&machine_name=" + document.device_view_form.machine_name.value;
-    //url += "&point=" + document.device_view_form.point.value;
-    //url += "&update=" + document.device_view_form.update.value;
-    //url += "&address=" + document.device_view_form.address.value;
-    //url += "&type=" + document.device_view_form.type.value;
-    //url = encodeAGP( url );
-    //parent.monitor.location.href = url;
     get( address: string, callback: (data:string)=>void) :void {
         //console.log( "automate.get - begin" );
         var url: string = this.urlget;
@@ -91,7 +55,7 @@ class Automate {
 function popupError( data: string ) {
     alert( "error communicating with the automate:\n\r" + data );
 }
-function autoPost( address: string, value: string ) {
+function autoPost( address: string, value: any ) {
     var automate: Automate = new Automate();
     automate.post( address, value );
 }
@@ -110,16 +74,6 @@ function encodeAGP( data ) {
     return ret;
 }
 
-// Device View - Open write dialog box.
-//function openDeviceViewWrite( language, machine_name, address, type ) {
-//    var url = "/goform/Controller?req=device_view_write_form&lang=" + language;
-//    url += "&machine_name=" + machine_name;
-//    url += "&address=" + address;
-//    url += "&type=" + type;
-//    url = encodeAGP( url );
-//    window.open( url, 'subwin', 'width=700,height=200,drectoriesion=no,menubar=no,scrollbars=no,status=no,resizable=no' );
-//}
-
 //On Internet Explorer 6, the screen will close when logging off.
 function closeConfirm() {
     if ( !confirm( "Log off?" ) ) {
@@ -128,3 +82,47 @@ function closeConfirm() {
         window.parent.close();
     }
 }
+
+
+$( "#page-lumiere" ).on( "pagebeforeshow", function () {
+    //console.log( "page-lumiere.pagebeforeshow" );
+    $( "#light1" ).flipswitch( "disable" ).flipswitch( "refresh" );
+    $( "#light2" ).flipswitch( "disable" ).flipswitch( "refresh" );
+    autoGet( "USR0000001", function ( data ) {
+        console.log( "autoget.Light1:" + data );
+        if ( data == 0 ) {
+            $( "#light1" ).val( "off" ).flipswitch( "refresh" );
+        } else {
+            $( "#light1" ).val( "on" ).flipswitch( "refresh" );
+        }
+        $( "#light1" ).flipswitch( "enable" ).flipswitch( "refresh" );
+
+    });
+
+    autoGet( "USR0000002", function ( data ) {
+        console.log( "autoget.Light2:" + data );
+        if ( data == 0 ) {
+            $( "#light2" ).val( "off" ).flipswitch( "refresh" );
+        } else {
+            $( "#light2" ).val( "on" ).flipswitch( "refresh" );
+        }
+        $( "#light2" ).flipswitch( "enable" ).flipswitch( "refresh" );
+    });
+
+});
+$( "#light1" ).change( function () {
+    var state = $( "#light1" ).val();
+    if ( state == "on" ) {
+        autoPost( "USR0000001", 1 );
+    } else {
+        autoPost( "USR0000001", 0 );
+    }
+});
+$( "#light2" ).change( function () {
+    var state = $( "#light2" ).val();
+    if ( state == "on" ) {
+        autoPost( "USR0000002", 1 );
+    } else {
+        autoPost( "USR0000002", 0 );
+    }
+});

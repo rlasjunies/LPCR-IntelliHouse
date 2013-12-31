@@ -69,46 +69,6 @@
 			        <option value="on">On</option>
 		        </select>
 	        </div>			
-                <script>
-                    $("#page-lumiere").on("pagebeforeshow", function () {
-                        console.log("page-lumiere.pagebeforeshow");
-                        autoGet("USR0000001", function (data) {
-                            console.log("autoget.Light1:" + data);
-                            if (data == 0) {
-                                $("#light1").val("off").flipswitch("refresh");
-                            } else {
-                                $("#light1").val("on").flipswitch("refresh");
-                            }
-                        });
-
-                        autoGet("USR0000002", function (data) {
-                            console.log("autoget.Light2:" + data);
-                            if (data == 0) {
-                                $("#light2").val("off").flipswitch("refresh");
-                            } else {
-                                $("#light2").val("on").flipswitch("refresh");
-                            }
-                        });
-
-                    });
-                    $("#light1").change(function () {
-                        state = $("#light1").val();
-                        if (state == "on") {
-                            autoPost("USR0000001", 1);
-                        } else {
-                            autoPost("USR0000001", 0);
-                        }
-                    });
-                    $("#light2").change(function () {
-                        state = $("#light2").val();
-                        if (state == "on") {
-                            autoPost("USR0000002", 1);
-                        } else {
-                            autoPost("USR0000002", 0);
-                        }
-                    });
-        </script>
-
 		</div>
 	</div> 
 
